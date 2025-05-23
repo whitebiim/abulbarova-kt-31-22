@@ -3,7 +3,7 @@ using abulbarovakt_31_22.Database.Configurations;
 using abulbarovakt_31_22.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace kazakov_andrey_kt_43_21.Database
+namespace abulbarovakt_31_22.Database
 {
     public class TeacherDbContext : DbContext
     {
