@@ -1,0 +1,6 @@
+@abulbarovakt_31_22_HostAddress = http://localhost:5052
+
+GET {{abulbarovakt_31_22_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
