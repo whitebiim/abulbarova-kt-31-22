@@ -4,6 +4,7 @@
 using abulbarovakt_31_22.Models;
 
 
+//Преподаватели
 namespace abulbarovakt_31_22.Interfaces.TeachersInterfaces
 {
     public interface ITeacherService

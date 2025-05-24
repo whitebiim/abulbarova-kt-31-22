@@ -28,7 +28,7 @@ namespace abulbarovakt_31_22.Controllers
             _teacherFilterService = teacherFilterService;
         }
 
-        // Методы фильтрации
+        
         [HttpPost("GetTeachersByDataAsync")]
         public async Task<IActionResult> GetTeachersByDataAsync(TeacherDataFilter filter, CancellationToken cancellationToken = default)
         {
@@ -36,7 +36,7 @@ namespace abulbarovakt_31_22.Controllers
             return Ok(teachers);
         }
 
-
+        // Методы фильтрации
         [HttpPost("GetTeachersByDepartmentAsync")]
         public async Task<IActionResult> GetTeachersByDepartmentAsync(TeacherDepartmentFilter filter, CancellationToken cancellationToken = default)
         {

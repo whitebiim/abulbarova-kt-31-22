@@ -1,9 +1,10 @@
-﻿
-
-﻿using abulbarovakt_31_22.Database;
+﻿﻿using abulbarovakt_31_22.Database;
 using abulbarovakt_31_22.Filters;
 using abulbarovakt_31_22.Models;
 using Microsoft.EntityFrameworkCore;
+
+
+//Преподаватели фильтрацию по кафедре, по должности
 
 namespace abulbarovakt_31_22.Interfaces.TeachersInterfaces
 {
