@@ -106,5 +106,14 @@ namespace abulbarovakt_31_22.Controllers
 
             return NoContent();
         }
+
+
+        [HttpGet("error")]
+        public IActionResult TriggerError()
+        {
+            throw new Exception("Исключение для проверки middleware");
+        }
+
+
     }
 }
