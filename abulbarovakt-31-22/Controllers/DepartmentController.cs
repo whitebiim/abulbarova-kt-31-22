@@ -1,4 +1,9 @@
 ﻿
+//Какие методы можно вызывать (через интерфейс)
+//Какие параметры передавать
+
+
+
 using abulbarovakt_31_22.Interfaces.DepartmentInterfaces;
 using abulbarovakt_31_22.Interfaces.TeachersInterfaces;
 using abulbarovakt_31_22.Models;
@@ -24,6 +29,8 @@ namespace abulbarovakt_31_22.Controllers
             _departmentService = departmentService;
         }
 
+
+        // GetDepartment() - Получение всех кафедр
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(IEnumerable<Department>))]
         public IActionResult GetDepartment()
@@ -31,6 +38,8 @@ namespace abulbarovakt_31_22.Controllers
             return Ok(_departmentService.GetDepartment());
         }
 
+
+        // AddDepartment() - Добавление кафедры
         [HttpPost("add")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
@@ -43,6 +52,8 @@ namespace abulbarovakt_31_22.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
+
+        // UpdateDepartment() - Обновление кафедры
         public IActionResult UpdateDepartment(Department department)
         {
             if (department == null)
@@ -69,7 +80,7 @@ namespace abulbarovakt_31_22.Controllers
             return NoContent();
         }
 
-
+        // DeleteDepartment() - Удаление кафедры
         [HttpDelete("{departmentId}")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]

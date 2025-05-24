@@ -18,6 +18,8 @@ namespace abulbarovakt_31_22.Controllers
         private readonly ITeacherService _teacherService;
         private readonly ITeacherFilterInterfaceService _teacherFilterService;
 
+
+        //  внедрение зависимостей через конструктор
         public TeachersController(IPositionService positionService, IDepartmentService departmentService, ITeacherService teacherService, ITeacherFilterInterfaceService teacherFilterService)
         {
             _positionService = positionService;
@@ -26,7 +28,7 @@ namespace abulbarovakt_31_22.Controllers
             _teacherFilterService = teacherFilterService;
         }
 
-
+        // Методы фильтрации
         [HttpPost("GetTeachersByDataAsync")]
         public async Task<IActionResult> GetTeachersByDataAsync(TeacherDataFilter filter, CancellationToken cancellationToken = default)
         {
@@ -50,7 +52,7 @@ namespace abulbarovakt_31_22.Controllers
             return Ok(teachers);
         }
 
-
+        // Добавление преподавателя
         [HttpPost("add")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
@@ -69,7 +71,7 @@ namespace abulbarovakt_31_22.Controllers
             return Ok(await _teacherService.AddTeacher(newTeacher));
         }
 
-
+        // Обновление преподавателя
         [HttpPut("{teacherId}")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
@@ -108,7 +110,7 @@ namespace abulbarovakt_31_22.Controllers
             return NoContent();
         }
 
-
+        //Удаление преподавателя
         [HttpDelete("{teacherId}")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]

@@ -1,5 +1,5 @@
 ﻿
-
+//контроль над передаваемыми данными
 namespace abulbarovakt_31_22.Dto
 {
     public class TeacherDto

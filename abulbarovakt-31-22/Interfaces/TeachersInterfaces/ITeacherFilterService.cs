@@ -3,19 +3,24 @@
 ﻿using abulbarovakt_31_22.Database;
 using abulbarovakt_31_22.Filters;
 using abulbarovakt_31_22.Models;
-using abulbarovakt_31_22.Database;
 using Microsoft.EntityFrameworkCore;
 
 namespace abulbarovakt_31_22.Interfaces.TeachersInterfaces
 {
     public interface ITeacherFilterInterfaceService
     {
+        // Получение по ID
         public Teacher GetTeacherById(int teacherId);
+        // По ФИО
         public Task<Teacher[]> GetTeachersByDataAsync(TeacherDataFilter filter, CancellationToken cancellationToken);
+        // По кафедре
         public Task<Teacher[]> GetTeachersByDepartmentAsync(TeacherDepartmentFilter filter, CancellationToken cancellationToken);
+        // По должности
         public Task<Teacher[]> GetTeachersByPositionAsync(TeacherPositionFilter filter, CancellationToken cancellationToken);
     }
-
+    
+    
+    // Реализация ITeacherFilterService
     public class ITeacherFilterService : ITeacherFilterInterfaceService
     {
         private readonly TeacherDbContext _dbContext;

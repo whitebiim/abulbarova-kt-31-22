@@ -1,5 +1,5 @@
 ﻿
-
+//Кафедра
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
@@ -15,7 +15,7 @@ namespace abulbarovakt_31_22.Models
 
         public bool isValidDepartmentName()
         {
-            //return Regex.Match(DepartmentName, @"(.*[А-ЯЁ][а-яё]+)*(\s[А-ЯЁ][а-яё]*)?$").Success;
+            // проверка валидности названия кафедры (регулярное выражение)
             return Regex.Match(DepartmentName, @"^[А-ЯЁ][а-яё](\S+)?\s[А-ЯЁ][а-яё]+$").Success;
         }
     }

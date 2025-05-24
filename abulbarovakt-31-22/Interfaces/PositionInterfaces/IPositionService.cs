@@ -1,12 +1,12 @@
 ﻿
 using abulbarovakt_31_22.Models;
 using abulbarovakt_31_22.Database;
-using abulbarovakt_31_22.Database;
+
 
 
 namespace abulbarovakt_31_22.Interfaces.PositionInterfaces
 {
-
+    // Пполучение должности по ID
     public interface IPositionService
     {
         public Position GetPositionById(int id);

@@ -10,6 +10,8 @@ namespace abulbarovakt_31_22.Database.Configurations
         private const string TableName = "cd_teacher";
         public void Configure(EntityTypeBuilder<Teacher> builder)
         {
+            // Основные свойства (FirstName, LastName, MiddleName)
+
             builder
               .HasKey(t => t.TeachersId)
               .HasName($"pk_{TableName}_teacher_id");
@@ -40,16 +42,21 @@ namespace abulbarovakt_31_22.Database.Configurations
               .HasColumnName("f_department_id")
               .HasColumnType(ColumnType.Int);
 
+
+            // Две связи:
+            // 1. С Department (многие к одному)  -- Преподаватель принадлежит одной кафедре (Department)
             builder.ToTable(TableName)
               .HasOne(p => p.Department)
               .WithMany()
               .HasForeignKey(p => p.DepartmentId)
               .HasConstraintName("fk_f_department_id")
-              .OnDelete(DeleteBehavior.Cascade);
+              .OnDelete(DeleteBehavior.Cascade);//с каскадным удалением
 
+            // Индексы для ускорения поиска
             builder.ToTable(TableName)
               .HasIndex(p => p.DepartmentId, $"idx_{TableName}_fk_f_department_id");
 
+            // Автоматическая загрузка связанных данных
             builder.Navigation(p => p.Department)
               .AutoInclude();
 
@@ -58,16 +65,22 @@ namespace abulbarovakt_31_22.Database.Configurations
               .HasColumnName("f_position_id")
               .HasColumnType(ColumnType.Int);
 
+
+            // 2. С Position (многие к одному)  -- Преподаватель имеет одну должность (Position)
             builder.ToTable(TableName)
               .HasOne(p => p.Position)
               .WithMany()
               .HasForeignKey(p => p.PositionId)
               .HasConstraintName("fk_f_position_id")
-              .OnDelete(DeleteBehavior.Cascade);
+              .OnDelete(DeleteBehavior.Cascade);//с каскадным удалением
 
+
+            // Индексы для ускорения поиска
             builder.ToTable(TableName)
               .HasIndex(p => p.PositionId, $"idx_{TableName}_fk_c_position_id");
-
+            
+            
+            // Автоматическая загрузка связанных данных
             builder.Navigation(p => p.Position)
               .AutoInclude();
         }

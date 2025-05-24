@@ -2,22 +2,19 @@
 
 ﻿using abulbarovakt_31_22.Database;
 using abulbarovakt_31_22.Models;
-using abulbarovakt_31_22.Database;
-
-/*
- 2)Получение списка преподавателей (учесть фильтрацию по кафедре, по степени, по должности)
- 5)Добавление/изменение удаление кафедр (удаление см. начало документа) при удалении кафедры, 
-   удаляются и привязанные к кафедре преподаватели 
-*/
 
 
 namespace abulbarovakt_31_22.Interfaces.TeachersInterfaces
 {
     public interface ITeacherService
     {
+        // Добавление преподавателя
         public Task<Teacher> AddTeacher(Teacher teacher);
+        // Проверка существования
         public bool TeacherExists(int teacherId);
+        // Обновление данных
         public bool UpdateTeacher(Teacher teacher);
+        // Удаление преподавателя
         public bool DeleteTeacher(Teacher teacher);
     }
 

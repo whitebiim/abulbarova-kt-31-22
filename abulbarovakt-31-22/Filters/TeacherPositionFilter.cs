@@ -1,4 +1,6 @@
-﻿namespace abulbarovakt_31_22.Filters
+﻿//	Поиск по должности
+
+namespace abulbarovakt_31_22.Filters
 {
     public class TeacherPositionFilter
     {

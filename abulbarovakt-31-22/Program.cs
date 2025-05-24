@@ -5,8 +5,8 @@ using NLog.Web;
 
 
 using abulbarovakt_31_22.ServiceExtensions;
-using abulbarovakt_31_22.Database;
-//using abulbarovakt_31_22.Middlewares;
+
+using abulbarovakt_31_22.Middlewares;
 
 
 
@@ -43,6 +43,7 @@ try
         app.UseSwaggerUI();
     }
 
+ //   app.UseMiddleware<ExceptionHandlerMiddleware>();
     app.UseAuthorization();
 
     app.MapControllers();

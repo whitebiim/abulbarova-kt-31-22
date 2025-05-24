@@ -1,6 +1,6 @@
 ﻿
-
-﻿using abulbarovakt_31_22.Interfaces.DepartmentInterfaces;
+//для централизованной регистрации сервисов 
+using abulbarovakt_31_22.Interfaces.DepartmentInterfaces;
 using abulbarovakt_31_22.Interfaces.PositionInterfaces;
 using abulbarovakt_31_22.Interfaces.TeachersInterfaces;
 

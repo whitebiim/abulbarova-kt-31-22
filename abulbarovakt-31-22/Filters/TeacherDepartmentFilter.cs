@@ -1,4 +1,6 @@
-﻿namespace abulbarovakt_31_22.Filters
+﻿//Фильтрация по кафедре (ID или названию)
+
+namespace abulbarovakt_31_22.Filters
 {
     public class TeacherDepartmentFilter
     {
